@@ -33,7 +33,9 @@ The goal is to count the total number of separate islands in the grid.
 
 
 
-4.solution :
+
+
+4.solution(Python) :
    class Solution(object):
     def numIslands(self, grid):
         if not  grid:
@@ -53,5 +55,7 @@ The goal is to count the total number of separate islands in the grid.
         self.dfs(grid,i-1,j)
         self.dfs(grid,i+1,j)
         self.dfs(grid,i,j-1)
-        self.dfs(grid,i,j+1)    
+        self.dfs(grid,i,j+1)  
+
+6.Time Complexity : O(m*n)
 
