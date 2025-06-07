@@ -1,0 +1,50 @@
+1. You are given a string s. It may contain any number of '*' characters. Your task is to remove all '*' characters.
+
+While there is a '*', do the following operation:
+
+Delete the leftmost '*' and the smallest non-'*' character to its left. If there are several smallest characters, you can delete any of them.
+Return the lexicographically smallest resulting string after removing all '*' characters.
+
+ 
+
+Example 1:
+Input: s = "aaba*"
+Output: "aab"
+Explanation:
+We should delete one of the 'a' characters with '*'. If we choose s[3], s becomes the lexicographically smallest.
+
+Example 2:
+Input: s = "abc"
+Output: "abc"
+Explanation:
+There is no '*' in the string.
+
+
+2.Approach:
+  *Convert the string to a list s_list so characters can be modified in-place.
+  *Use a heap (min-heap) to always keep track of the smallest character available for deletion.
+  *Maintain a pos list to track positions of each character (a to z) in the string.
+  *For every '*', remove the rightmost occurrence of the smallest character from the heap and mark it as deleted.
+  *Finally, build and return a string from s_list, skipping all '*' characters.
+
+3.solution.py:
+class Solution(object):
+    def clearStars(self, s):
+        s_list = list(s)
+        pos = [[] for _ in range(26)]
+        heap = []
+        for i, c in enumerate(s_list):
+            if c == '*':
+                smallest = heap[0]
+                idx = pos[ord(smallest) - 97].pop()
+                s_list[idx] = '*'
+                if not pos[ord(smallest) - 97]:
+                    heapq.heappop(heap)
+            else:
+                ci = ord(c) - 97
+                if not pos[ci]:
+                    heapq.heappush(heap, c)
+                pos[ci].append(i)
+        return ''.join(ch for ch in s_list if ch != '*')
+
+4.Time Complexity: O(n)
