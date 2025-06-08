@@ -32,6 +32,6 @@ class Solution(object):
                 current+=1
                 while current%10==0:
                     current//=10
-     return result  ```               
+     return result               
 
 4.Time Complexity: O(n)
