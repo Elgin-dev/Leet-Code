@@ -1,0 +1,37 @@
+1.Given an integer n, return all the numbers in the range [1, n] sorted in lexicographical order.
+
+You must write an algorithm that runs in O(n) time and uses O(1) extra space. 
+
+Example 1:
+Input: n = 13
+Output: [1,10,11,12,13,2,3,4,5,6,7,8,9]
+
+Example 2:
+Input: n = 2
+Output: [1,2]
+
+2.Approach:
+  *Append current number.
+  *Try to go deeper (curr * 10) if possible.
+  *Else move to next number (curr + 1) if last digit not 9 and not exceeding n.
+  *Else backtrack by dividing by 10.
+
+3.Solution.py:
+```python
+class Solution(object):
+    def lexicalOrder(self, n):
+     result=[]
+     current=1
+     for _ in range (n):
+            result.append(current)
+            if current*10<=n:
+                current*=10
+            else:
+                if current>=n:
+                    current//=10
+                current+=1
+                while current%10==0:
+                    current//=10
+     return result  ```               
+
+4.Time Complexity: O(n)
