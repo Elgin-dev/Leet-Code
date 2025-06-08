@@ -16,7 +16,7 @@ Output: [1,2]
   *Else move to next number (curr + 1) if last digit not 9 and not exceeding n.
   *Else backtrack by dividing by 10.
 
-3.Solution.py:
+##3.Solution.py:
 ```python
 class Solution(object):
     def lexicalOrder(self, n):
