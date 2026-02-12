@@ -20,14 +20,14 @@ Explanation:
 There is no '*' in the string.
 
 
-2.Approach:
+## 2.Approach:
   *Convert the string to a list s_list so characters can be modified in-place.
   *Use a heap (min-heap) to always keep track of the smallest character available for deletion.
   *Maintain a pos list to track positions of each character (a to z) in the string.
   *For every '*', remove the rightmost occurrence of the smallest character from the heap and mark it as deleted.
   *Finally, build and return a string from s_list, skipping all '*' characters.
 
-###3.solution.py:
+## 3.solution.py:
 class Solution(object):
     def clearStars(self, s):
         s_list = list(s)
