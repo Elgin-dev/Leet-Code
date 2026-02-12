@@ -27,7 +27,7 @@ There is no '*' in the string.
   *For every '*', remove the rightmost occurrence of the smallest character from the heap and mark it as deleted.
   *Finally, build and return a string from s_list, skipping all '*' characters.
 
-3.solution.py:
+###3.solution.py:
 class Solution(object):
     def clearStars(self, s):
         s_list = list(s)
