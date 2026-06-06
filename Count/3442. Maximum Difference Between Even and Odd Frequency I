@@ -1,0 +1,61 @@
+You are given a string s consisting of lowercase English letters.
+Your task is to find the maximum difference diff = freq(a1) - freq(a2) between the frequency of characters a1 and a2 in the string such that:
+  a1 has an odd frequency in the string.
+  a2 has an even frequency in the string.
+  Return this maximum difference.
+
+ 
+
+Example 1:
+Input: s = "aaaaabbc"
+Output: 3
+Explanation:
+The character 'a' has an odd frequency of 5, and 'b' has an even frequency of 2.
+The maximum difference is 5 - 2 = 3.
+
+Example 2:
+
+Input: s = "abcabcab"
+Output: 1
+Explanation:
+The character 'a' has an odd frequency of 3, and 'c' has an even frequency of 2.
+The maximum difference is 3 - 2 = 1.
+
+
+1.Intuition
+The problem requires finding the maximum difference between the frequency of an odd-count character and an even-count character.
+
+2.Approach:
+  *Character Frequency Counting: Use a dictionary to store the occurrence of each character.
+  *Separate Odd & Even Frequencies: Iterate through the frequency dictionary and categorize values into odd and even lists.
+  *Compute Max Difference:
+  *Find the largest odd frequency (max(odd_frequencies)).
+  *Find the smallest even frequency (min(even_frequencies)).
+  *Compute the result: max(odd_frequencies) - min(even_frequencies).
+
+3.Why This Works:
+  *Taking the maximum odd ensures we subtract the largest possible value.
+  *Taking the minimum even ensures the smallest number is subtracted, maximizing the difference.
+
+4.Complexity Analysis:
+  Counting characters → O(n)
+  Separating odd/even → O(26) ≈ O(1) (since only lowercase letters are present)
+  Finding max/min → O(1)
+  Overall Complexity → O(n)
+
+5.Code:
+class Solution(object):
+    def maxDifference(self, s):
+        count={}
+        for char in s:
+            if char in count:
+                count[char]+=1
+            else:
+                count[char]=1
+        odd_f=[freq for freq in count.values() if freq%2!=0]
+        even_f=[freq for freq in count.values() if freq%2==0]
+        if not odd_f or not even_f:
+            return -1 
+           
+
+        return max(odd_f) - min(even_f)
