@@ -1,6 +1,6 @@
 # 🧩 LeetCode Solutions – Elgin EB
 
-![LeetCode Badge](https://img.shields.io/badge/LeetCode-304_solved-orange?logo=leetcode&style=for-the-badge)
+![LeetCode Badge](https://img.shields.io/badge/LeetCode-353_solved-orange?logo=leetcode&style=for-the-badge)
 ![Python Badge](https://img.shields.io/badge/Python-3-blue?logo=python&style=for-the-badge)
 ![GitHub Repo Size](https://img.shields.io/github/repo-size/Elgin-dev/Leet-Code?style=for-the-badge)
 ![License](https://img.shields.io/github/license/Elgin-dev/Leet-Code?style=for-the-badge)
