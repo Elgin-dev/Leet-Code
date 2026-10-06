@@ -8,9 +8,9 @@
 ---
 
 ## 📊 Progress Overview
-- **Total Solved:** 304 problems  
+- **Total Solved:** 353 problems  
 - **Easy:** 133 / 956  
-- **Medium:** 135 / 2088  
+- **Medium:** 166 / 2088  
 - **Hard:** 36 / 955  
 - **Currently Attempting:** 7  
 
